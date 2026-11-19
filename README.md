@@ -1,61 +1,66 @@
 # DJOBI ImageFlow
 
-**Renommez, convertissez et préparez vos images plus simplement sous Windows.**
+**Préparez, renommez et convertissez vos images et photographies sous Windows.**
 
-DJOBI ImageFlow est un utilitaire Windows édité par **DJOBI**, conçu pour préparer des lots d'images, notamment pour les fiches produits et les catalogues e-commerce.
+DJOBI ImageFlow est un logiciel édité par **DJOBI**, destiné à la préparation de visuels e-commerce et au classement de photographies. Interface en français, onglets **Images** et **Photographies**.
+
+## Télécharger et installer
+
+**[Télécharger la dernière version officielle](https://github.com/djobifr/djobi-imageflow/releases/latest)**
+
+1. Téléchargez `DJOBI-ImageFlow-vX.Y.Z.zip` dans les Releases.
+2. Extrayez le ZIP dans un dossier.
+3. Exécutez `Installer-DJOBI.cmd`.
+4. Ouvrez **DJOBI ImageFlow** depuis Windows.
+
+**Compatibilité :** Windows, principalement testé sous Windows 11 ; PowerShell 5.1 / Windows Forms. **ImageMagick** est requis pour certaines conversions et peut être proposé à l'installation.
 
 ## Fonctionnalités
 
-- **Renommage par lot** avec numérotation automatique (`01`, `02`, etc.).
-- **Conversion** entre PNG, JPG et WEBP à l'aide d'ImageMagick.
-- **Préservation de la transparence** pour les formats compatibles ; fond blanc pour les images converties en JPG.
-- **Nettoyage des anciens titres et métadonnées** lors du traitement.
-- **Préremplissage du code-barres** depuis le presse-papiers lorsqu'un EAN-8, UPC-A ou EAN-13 valide est détecté.
-- **Aperçu des noms** et indication du poids des fichiers.
-- **Intégration à l'Explorateur Windows** via le menu *Envoyer vers* pour la sélection multiple.
-- **Vérification des mises à jour** et outils de maintenance depuis les paramètres.
+### Onglet Images
+- Import de plusieurs fichiers depuis **Choisir des images…**, par glisser-déposer ou via **Envoyer vers** dans l'Explorateur Windows.
+- Bouton **Actualiser** pour récupérer des images ou une archive ZIP récente depuis **Téléchargements** et utiliser, lorsque possible, le code EAN du presse-papiers.
+- Renommage optionnel par nom ou code-barres, avec numérotation automatique et tri naturel.
+- Préremplissage des codes EAN-8, UPC-A et EAN-13 valides depuis le presse-papiers.
+- Formats de sortie **Conserver les formats**, **WEBP**, **PNG** et **JPG**.
+- Aperçu des noms, contrôle des conflits, information sur les tailles des fichiers.
+- Option de suppression des métadonnées **désactivée par défaut lors d'une première installation** ; les préférences enregistrées peuvent être conservées.
 
-## Télécharger
+### Onglet Photographies
+- Import de photographies et de dossiers, glisser-déposer, aperçu avant traitement.
+- Modes de renommage, notamment à partir des dates photographiques (EXIF), avec date manuelle ou de secours et numéro de départ.
+- Détection des doublons strictement identiques par **SHA-256**, avec choix des fichiers à conserver.
+- Conversion vers les formats proposés dans l'interface ; prise en charge de plusieurs formats photographiques selon les composants disponibles.
+- Les vidéos importées sont conservées dans leur format d'origine.
+- Choix du dossier de destination ; **originaux conservés par défaut**. Leur suppression nécessite une confirmation et intervient seulement après création et vérification des sorties.
 
-➡️ **[Accéder aux versions officielles](https://github.com/djobifr/djobi-imageflow/releases/latest)**
+## Utilisation rapide
 
-Téléchargez l'archive `DJOBI-ImageFlow-vX.Y.Z.zip` de la dernière version, extrayez-la, puis lancez `Installer-DJOBI.cmd`.
+**Images :** choisissez vos fichiers, activez ou désactivez **Renommer mes images**, saisissez le nom ou l'EAN si nécessaire, choisissez le format, vérifiez l'aperçu et lancez **Renommer / Convertir**.
 
-> **Compatibilité :** application destinée à Windows, principalement testée sous Windows 11. ImageMagick est nécessaire au traitement des images ; l'application peut proposer son installation lorsqu'il est absent.
+**Photographies :** ajoutez des fichiers ou un dossier, choisissez le mode de renommage et la date de secours éventuelle, contrôlez les doublons, sélectionnez le format et lancez **Traiter les photographies**. Confirmez le dossier de sortie et le sort des originaux.
 
-## Utilisation
-
-1. Sélectionnez les images dans l'Explorateur de fichiers.
-2. Ouvrez **Afficher d'autres options → Envoyer vers → DJOBI ImageFlow**.
-3. Indiquez un nom de base ou un code EAN.
-4. Choisissez le format de sortie.
-5. Vérifiez l'aperçu, puis lancez **Renommer / Convertir**.
-
-**Exemple de résultat :**
-
-```text
-4719072842918 - 01.webp
-4719072842918 - 02.webp
-4719072842918 - 03.webp
-```
-
-**Conseil :** effectuez un premier essai sur des copies de vos images. Selon le traitement, les fichiers originaux peuvent être remplacés ou supprimés après réussite.
+Pour les deux onglets, effectuez un premier essai sur des copies de fichiers importants.
 
 ## Mises à jour
 
-Ouvrez **Paramètres → Vérifier les mises à jour** dans DJOBI ImageFlow. Les versions officielles sont distribuées via les [Releases](https://github.com/djobifr/djobi-imageflow/releases).
+Depuis la **v4.7.99**, le logiciel vérifie au démarrage si une version plus récente existe. Si oui, une fenêtre permet **d'accepter ou de refuser** l'installation. En cas de refus, la proposition revient au **prochain lancement**. Une mise à jour publiée pendant que le logiciel reste ouvert n'interrompt pas le travail.
 
-Le comportement d'installation dépend de la version déjà installée. La v4.7.3 introduit un mécanisme d'installation automatique qui doit encore être validé de bout en bout sur Windows.
+La vérification manuelle reste disponible dans le menu **Mises à jour**. Les packages officiels sont distribués dans les [Releases](https://github.com/djobifr/djobi-imageflow/releases). La procédure prévoit des vérifications et une restauration de la version précédente en cas d'échec.
+
+## Guide complet
+
+Consultez le **[guide d'utilisation](GUIDE-UTILISATION.md)** pour les étapes détaillées et le dépannage. Un centre d'aide est également accessible dans le logiciel.
 
 ## Sécurité et distribution
 
-- Téléchargez uniquement depuis les Releases officielles de ce dépôt.
-- Les archives peuvent être accompagnées d'une empreinte **SHA-256** permettant d'en vérifier l'intégrité.
-- Ce dépôt est dédié à la **distribution** ; il ne contient pas le code source de développement.
-- La disponibilité publique d'un installateur ne signifie pas que le logiciel est open source.
+- Utilisez uniquement les archives officielles de ce dépôt.
+- Vérifiez l'intégrité des téléchargements lorsque des empreintes SHA-256 sont disponibles.
+- Ce dépôt public sert à la **distribution et à la documentation** ; le code source de développement est conservé séparément.
+- Le logiciel n'est pas présenté comme open source.
 
 ## Éditeur
 
-**DJOBI** — [djobi.fr](https://www.djobi.fr)
+**DJOBI** — https://www.djobi.fr
 
 © 2026 DJOBI. Tous droits réservés.
